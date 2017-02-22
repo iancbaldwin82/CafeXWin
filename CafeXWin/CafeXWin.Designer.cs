@@ -33,6 +33,8 @@
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtServiceCharge = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 172);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 172);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnCalculate
@@ -59,7 +61,7 @@
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(483, 268);
+            this.txtResult.Location = new System.Drawing.Point(620, 298);
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
             this.txtResult.Size = new System.Drawing.Size(144, 22);
@@ -68,7 +70,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(415, 271);
+            this.label1.Location = new System.Drawing.Point(500, 301);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 3;
@@ -83,11 +85,30 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Select item(s) from the menu below and click calculate";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(500, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Service Charge";
+            // 
+            // txtServiceCharge
+            // 
+            this.txtServiceCharge.Location = new System.Drawing.Point(620, 263);
+            this.txtServiceCharge.Name = "txtServiceCharge";
+            this.txtServiceCharge.ReadOnly = true;
+            this.txtServiceCharge.Size = new System.Drawing.Size(144, 22);
+            this.txtServiceCharge.TabIndex = 5;
+            // 
             // CafeXWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 319);
+            this.ClientSize = new System.Drawing.Size(798, 351);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtServiceCharge);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtResult);
@@ -111,6 +132,8 @@
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtServiceCharge;
     }
 }
 

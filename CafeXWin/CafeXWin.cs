@@ -20,8 +20,8 @@ namespace CafeXWin
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var items = new List<CafeMenuItem>() { new CafeMenuItem() { Name = "Cola", IsHot = false, Price = 0.50 },
-                                           new CafeMenuItem() { Name = "Coffee", IsHot = true, Price = 1.00 },
+            var items = new List<CafeMenuItem>() { new CafeMenuItem() { Name = "Cola", IsHot = false, Price = 0.50, IsDrink = true },
+                                           new CafeMenuItem() { Name = "Coffee", IsHot = true, Price = 1.00, IsDrink = true },
                                            new CafeMenuItem() { Name = "Cheese Sandwich", IsHot = false, Price = 2.00 },
                                            new CafeMenuItem() { Name = "Steak Sandwich", IsHot = true, Price = 4.50 }
                                          };
@@ -39,7 +39,9 @@ namespace CafeXWin
         private void button1_Click(object sender, EventArgs e)
         {
             var items = (List<CafeMenuItem>)dataGridView1.DataSource;
-            txtResult.Text = CafeXHelper.Calculate(items).ToString("0.00");
+            var selectedItems = items.Where(i => i.Selected == true);
+            txtResult.Text = CafeXHelper.CalculateTotalBill(selectedItems).ToString("0.00");
+            txtServiceCharge.Text = CafeXHelper.CalculateServiceCharge(selectedItems).ToString("0.00");
         }
 
     }

@@ -8,10 +8,31 @@ namespace CafeXLogic
 {
     public static class CafeXHelper
     {        
-        public static double Calculate(List<CafeMenuItem> items)
+        public static double CalculateTotalBill(IEnumerable<CafeMenuItem> items)
         {
-            var sum = items.Where(i => i.Selected == true).Sum(i => i.Price);
+            var sum = items.Sum(i => i.Price);
             return sum;
+        }
+
+        public static double CalculateServiceCharge(IEnumerable<CafeMenuItem> items)
+        {
+            var justDrinks = items.All(i => i.IsDrink);
+            if (justDrinks)
+            {
+                return 0;
+            }
+            else
+            {
+                var hotFood = items.Any(i => i.IsHot & i.IsDrink == false);
+                if (hotFood)
+                {
+                    return Math.Round(CalculateTotalBill(items) * 0.20, 2);
+                }
+                else
+                {
+                    return Math.Round(CalculateTotalBill(items) * 0.10, 2);
+                }
+            }
         }
     }
 }

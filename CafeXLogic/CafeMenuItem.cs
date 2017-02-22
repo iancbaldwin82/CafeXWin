@@ -10,6 +10,8 @@ namespace CafeXLogic
         public string Name { get; set; }
         public bool IsHot { get; set; }
         public double Price { get; set; }
+        public bool IsDrink { get; set; }
         public bool Selected { get; set; }
+       
     }
 }
